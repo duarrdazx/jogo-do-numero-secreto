@@ -10,6 +10,7 @@ let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
+// criar função de exibir texto na tela e adicionar som ao executar no site.
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
@@ -30,7 +31,7 @@ function exibirMensagemInicial() {
 
 exibirMensagemInicial();
 
-// Função em JS com comparação de valores -> Boolean
+// Função em JS com comparações -> if e else.
 function verificarChute() {
     let chute = document.querySelector('input').value;
 
@@ -52,7 +53,7 @@ function verificarChute() {
     }
 }
 
-// Função com retorno e com função matemática
+// função que gera número aleatório e armazena na lista para que não gere o mesmo número repetidamente.
 function gerarNumeroAleatorio() {
     let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
     let quantidadesElementosLista = listaNumerosSorteados.length;
@@ -70,11 +71,13 @@ function gerarNumeroAleatorio() {
     }
 }
 
+// função que limpa o campo após o usuário errar a tentativa
 function limparCampo() {
     chute = document.querySelector('input');
     chute.value = '';
 }
 
+// função que dá vida ao botão de reiniciar o jogo e que faz os números gerarem aleatoriamente para um novo jogo.
 function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
